@@ -1,233 +1,35 @@
-<!DOCTYPE html>
-<html lang="en">
+{% extends 'base.html' %}
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Prajwal | Anti-Gravity Portfolio</title>
-    <meta name="description"
-        content="Portfolio of Prajwal, a Developer specializing in Python, Flask, C++, and OpenGL.">
+{% block title %}Cosmic Time: Home{% endblock %}
 
-    <!-- Google Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&display=swap" rel="stylesheet">
+{% block content %}
+<header>
+    <h1>Time: From Cosmic Cycles to Curved Spacetime</h1>
+    <p class="subtitle">How mythology sensed what mathematics later proved</p>
+    <a href="{{ url_for('cosmology') }}" class="cta-button">Begin the Journey</a>
+</header>
 
-    <!-- Font Awesome for Icons -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-
-    <!-- Custom CSS -->
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
-</head>
-
-<body>
-
-    <!-- Navigation -->
-    <nav class="navbar">
-        <div class="container nav-content">
-            <a href="#" class="logo">Prajwal<span class="dot">.</span></a>
-            <ul class="nav-links">
-                <li><a href="#about">About</a></li>
-                <li><a href="#projects">Work</a></li>
-                <li><a href="#skills">Skills</a></li>
-                <li><a href="#contact">Contact</a></li>
-            </ul>
-            <div class="hamburger">
-                <i class="fas fa-bars"></i>
+<section class="intro">
+    <div class="card intro-card">
+        <h2>What Is Time?</h2>
+        <p>
+            Is time a flowing river, a cyclic wheel, or a static dimension?
+            Throughout history, humanity has sought to understand the nature of temporality.
+        </p>
+        <div class="features-grid">
+            <div class="feature">
+                <h3>Mythology</h3>
+                <p>Intuitive models of cosmic scales and cycles.</p>
+            </div>
+            <div class="feature">
+                <h3>Philosophy</h3>
+                <p>Debates on eternalism vs. presentism.</p>
+            </div>
+            <div class="feature">
+                <h3>Physics</h3>
+                <p>Mathematical descriptions of relativity and entropy.</p>
             </div>
         </div>
-    </nav>
-
-    <!-- Hero Section -->
-    <section id="hero" class="hero-section">
-        <div class="container hero-content">
-            <h2 class="animate-on-scroll">Hello, I'm <span class="highlight">Prajwal</span></h2>
-            <h1 class="animate-on-scroll">Defying Gravity with Code.</h1>
-            <p class="animate-on-scroll">Developer specializing in Python, Flask, C++, and OpenGL.</p>
-            <div class="cta-group animate-on-scroll">
-                <a href="#projects" class="btn">View My Work</a>
-                <a href="#contact" class="btn btn-secondary">Contact Me</a>
-            </div>
-        </div>
-        <!-- Abstract Background Elements -->
-        <div class="floating-shape shape-1"></div>
-        <div class="floating-shape shape-2"></div>
-    </section>
-
-    <!-- About Section -->
-    <section id="about" class="section about-section">
-        <div class="container">
-            <div class="section-title">
-                <h2>About Me</h2>
-            </div>
-            <div class="about-content">
-                <div class="about-text animate-on-scroll">
-                    <p>I am a passionate developer who loves exploring the boundaries of what's possible in software.
-                        With a strong foundation in systems programming (C++) and web development (Python/Flask), I
-                        build applications that are not only functional but also performant and visually striking.</p>
-                    <p>My interest in OpenGL allows me to bring 3D graphics and interactive visual experiences to life.
-                    </p>
-                </div>
-                <!-- Placeholder for Image -->
-                <div class="about-image animate-on-scroll">
-                    <div class="image-placeholder">
-                        <i class="fas fa-user-astronaut"></i>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Projects Section -->
-    <section id="projects" class="section projects-section">
-        <div class="container">
-            <div class="section-title">
-                <h2>Featured Projects</h2>
-            </div>
-            <div class="projects-grid">
-                <!-- Project Card 1 -->
-                <div class="project-card animate-on-scroll">
-                    <div class="card-image">
-                        <!-- Placeholder -->
-                        <div class="img-placeholder bg-blue"></div>
-                    </div>
-                    <div class="card-content">
-                        <h3>Anti-Gravity Engine</h3>
-                        <p>A physics engine simulation built with C++ and OpenGL demonstrating zero-gravity mechanics.
-                        </p>
-                        <div class="tags">
-                            <span class="tag">C++</span>
-                            <span class="tag">OpenGL</span>
-                            <span class="tag">Physics</span>
-                        </div>
-                        <div class="card-links">
-                            <a href="#" target="_blank"><i class="fab fa-github"></i> Code</a>
-                            <a href="#" target="_blank"><i class="fas fa-external-link-alt"></i> Demo</a>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Project Card 2 -->
-                <div class="project-card animate-on-scroll">
-                    <div class="card-image">
-                        <!-- Placeholder -->
-                        <div class="img-placeholder bg-purple"></div>
-                    </div>
-                    <div class="card-content">
-                        <h3>Flask Task Manager</h3>
-                        <p>A robust task management REST API built with Flask, SQLAlchemy, and JWT authentication.</p>
-                        <div class="tags">
-                            <span class="tag">Python</span>
-                            <span class="tag">Flask</span>
-                            <span class="tag">SQLAlchemy</span>
-                        </div>
-                        <div class="card-links">
-                            <a href="#" target="_blank"><i class="fab fa-github"></i> Code</a>
-                            <a href="#" target="_blank"><i class="fas fa-external-link-alt"></i> Demo</a>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Project Card 3 -->
-                <div class="project-card animate-on-scroll">
-                    <div class="card-image">
-                        <!-- Placeholder -->
-                        <div class="img-placeholder bg-cyan"></div>
-                    </div>
-                    <div class="card-content">
-                        <h3>Portfolio v1</h3>
-                        <p>My first portfolio website exploring CSS Grid and responsive design principles.</p>
-                        <div class="tags">
-                            <span class="tag">HTML</span>
-                            <span class="tag">CSS</span>
-                            <span class="tag">JS</span>
-                        </div>
-                        <div class="card-links">
-                            <a href="#" target="_blank"><i class="fab fa-github"></i> Code</a>
-                            <a href="#" target="_blank"><i class="fas fa-external-link-alt"></i> Demo</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Skills Section -->
-    <section id="skills" class="section skills-section">
-        <div class="container">
-            <div class="section-title">
-                <h2>Technical Arsenal</h2>
-            </div>
-            <div class="skills-wrapper animate-on-scroll">
-                <div class="skill-badge">
-                    <i class="fab fa-python"></i>
-                    <span>Python</span>
-                </div>
-                <div class="skill-badge">
-                    <i class="fas fa-flask"></i> <!-- Using flask icon if available or generic -->
-                    <span>Flask</span>
-                </div>
-                <div class="skill-badge">
-                    <i class="fas fa-code"></i>
-                    <span>C++</span>
-                </div>
-                <div class="skill-badge">
-                    <i class="fas fa-cube"></i>
-                    <span>OpenGL</span>
-                </div>
-                <div class="skill-badge">
-                    <i class="fab fa-html5"></i>
-                    <span>HTML5</span>
-                </div>
-                <div class="skill-badge">
-                    <i class="fab fa-css3-alt"></i>
-                    <span>CSS3</span>
-                </div>
-                <div class="skill-badge">
-                    <i class="fab fa-js"></i>
-                    <span>JavaScript</span>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Contact Section -->
-    <section id="contact" class="section contact-section">
-        <div class="container">
-            <div class="section-title">
-                <h2>Get In Touch</h2>
-            </div>
-            <div class="contact-content animate-on-scroll">
-                <form action="https://formspree.io/f/your-form-id" method="POST" class="contact-form">
-                    <div class="form-group">
-                        <input type="text" name="name" required placeholder="Your Name">
-                    </div>
-                    <div class="form-group">
-                        <input type="email" name="email" required placeholder="Your Email">
-                    </div>
-                    <div class="form-group">
-                        <textarea name="message" rows="5" required placeholder="Your Message"></textarea>
-                    </div>
-                    <button type="submit" class="btn">Send <i class="fas fa-paper-plane"></i></button>
-                </form>
-                <div class="social-links">
-                    <a href="https://github.com/" target="_blank" class="social-icon"><i class="fab fa-github"></i></a>
-                    <a href="https://linkedin.com/" target="_blank" class="social-icon"><i
-                            class="fab fa-linkedin"></i></a>
-                    <a href="mailto:email@example.com" class="social-icon"><i class="fas fa-envelope"></i></a>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Footer -->
-    <footer>
-        <div class="container">
-            <p>&copy; 2026 Prajwal. Built with Anti-Gravity.</p>
-        </div>
-    </footer>
-
-    <script src="{{ url_for('static', filename='js/main.js') }}"></script>
-</body>
-
-</html>
+    </div>
+</section>
+{% endblock %}

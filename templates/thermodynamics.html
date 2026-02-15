@@ -1,0 +1,35 @@
+{% extends 'base.html' %}
+
+{% block title %}Entropy: The Arrow of Time{% endblock %}
+
+{% block content %}
+<header>
+    <h1>The Arrow of Time</h1>
+    <p>Why we remember the past but not the future</p>
+</header>
+
+<section>
+    <h2>5. Entropy and Time</h2>
+    <div class="card">
+        <p>
+            While the laws of physics are mostly time-symmetric (they work the same forward and backward),
+            <b>Entropy</b> provides a direction. The Second Law of Thermodynamics states that the total entropy
+            (disorder) of an isolated system can never decrease over time. This gives time its "arrow."
+        </p>
+
+        <p><b>Formula:</b></p>
+        <pre>ΔS ≥ 0</pre>
+    </div>
+
+    <canvas id="entropyGraph"></canvas>
+
+    <div class="card">
+        <h3>The Heat Death</h3>
+        <p>
+            If entropy continues to increase, the universe will eventually reach a state of maximum disorder and thermal
+            equilibrium, known as the "Heat Death," where no more work can be extracted and time effectively ceases to
+            have meaning.
+        </p>
+    </div>
+</section>
+{% endblock %}

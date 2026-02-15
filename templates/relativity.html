@@ -1,0 +1,46 @@
+{% extends 'base.html' %}
+
+{% block title %}Relativity: The Geometry of Time{% endblock %}
+
+{% block content %}
+<header>
+    <h1>The Geometry of Time</h1>
+    <p>How Speed and Gravity Bend the Clock</p>
+</header>
+
+<section>
+    <h2>3. Velocity Time Dilation</h2>
+    <div class="card">
+        <p>
+            According to Einstein's Special Relativity, time slows down as you move faster. This is not a mechanical
+            error of the clock, but a fundamental property of spacetime geometry. The "present" is subjective to your
+            velocity.
+        </p>
+
+        <p><b>Formula:</b></p>
+        <pre>Δt' = Δt / √(1 − v² / c²)</pre>
+
+        <label>Velocity (v / c)</label>
+        <input type="range" id="velocity" min="0" max="0.99" step="0.01" value="0.1">
+    </div>
+
+    <canvas id="velocityGraph"></canvas>
+
+    <h2>4. Gravitational Time Dilation</h2>
+    <div class="card">
+        <p>
+            According to General Relativity, time flows slower closer to massive objects. Near a black hole, a few hours
+            could equal years for a distant observer. Gravity is not just a force, but the curvature of spacetime
+            itself.
+        </p>
+
+        <p><b>Formula:</b></p>
+        <pre>Δt' = Δt √(1 − 2GM / rc²)</pre>
+
+        <label>Distance from Mass (scaled)</label>
+        <input type="range" id="gravity" min="1" max="20" step="0.1" value="10">
+    </div>
+
+    <canvas id="gravityGraph"></canvas>
+</section>
+{% endblock %}

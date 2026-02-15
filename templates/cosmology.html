@@ -1,0 +1,37 @@
+{% extends 'base.html' %}
+
+{% block title %}Cosmology: Cycles of Time{% endblock %}
+
+{% block content %}
+<header>
+    <h1>Cosmic Cycles</h1>
+    <p>From the Yugas of India to the Cyclic Calendars of the Maya</p>
+</header>
+
+<section>
+    <h2>1. Time Across Indian Cosmology</h2>
+    <div class="card">
+        <p>
+            Indian cosmology describes time as <b>relative</b> and <b>cyclic</b>.
+            A single day of Brahma (Kalpa) equals <b>4.32 billion human years</b>.
+            This represents extreme scaling of time across reference frames, intuitively mirroring the concept of
+            gravitational time dilation where time flows differently depending on the gravitational potential (or
+            "loka").
+        </p>
+    </div>
+
+    <canvas id="cosmicTime"></canvas>
+
+    <h2>2. Linear vs Cyclic Time</h2>
+    <div class="card">
+        <p>
+            <b>Greek Chronos</b> represents linear time (t), marching forward from a beginning to an end.
+            <br>
+            <b>Mayan and Indian systems</b> represent cyclic time, modeled mathematically as periodic functions like
+            sine waves. In these models, "endings" are merely phase shifts into new cycles.
+        </p>
+    </div>
+
+    <canvas id="cycleGraph"></canvas>
+</section>
+{% endblock %}
