@@ -1,0 +1,299 @@
+:root {
+    --bg-space: #050510;
+    --card-bg: rgba(10, 10, 15, 0.8);
+    --glass: rgba(0, 247, 255, 0.1);
+    --font-stack-pro: 'Outfit', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    --font-hack: 'Courier Prime', 'Courier New', monospace;
+    /* Hacking Font */
+    --neon-blue: #00f7ff;
+    --neon-purple: #a259ff;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: var(--bg-space);
+    font-family: var(--font-stack-pro);
+    /* Professional default */
+    font-size: 16px;
+    /* Smaller, professional size */
+    color: #e0e0e0;
+    min-height: 100vh;
+    overflow-x: hidden;
+    position: relative;
+    line-height: 1.5;
+}
+
+/* --- Background --- */
+#canvas-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: -1;
+}
+
+/* --- Typography Overrides --- */
+.hacking-font {
+    font-family: var(--font-hack);
+    letter-spacing: -1px;
+}
+
+h1,
+h2,
+h3 {
+    color: #fff;
+    font-weight: 600;
+}
+
+h1 {
+    font-size: 2.5rem;
+}
+
+h2 {
+    font-size: 2rem;
+}
+
+/* --- Navigation & Home --- */
+.home-container {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    padding-top: 15vh;
+}
+
+.welcome-text {
+    font-size: 3rem;
+    margin-bottom: 50px;
+    text-shadow: 0 0 10px var(--neon-blue);
+    opacity: 0;
+    animation: typing 3s steps(30, end) forwards, blink .75s step-end infinite;
+    white-space: nowrap;
+    overflow: hidden;
+    border-right: 2px solid var(--neon-blue);
+    color: var(--neon-blue);
+}
+
+@keyframes typing {
+    from {
+        width: 0;
+        opacity: 1;
+    }
+
+    to {
+        width: 100%;
+        opacity: 1;
+    }
+}
+
+@keyframes blink {
+
+    from,
+    to {
+        border-color: transparent
+    }
+
+    50% {
+        border-color: var(--neon-blue);
+    }
+}
+
+.hanging-cards-container {
+    display: flex;
+    gap: 40px;
+    perspective: 1000px;
+}
+
+.hanging-card {
+    position: relative;
+    width: 120px;
+    height: 160px;
+    /* Slightly smaller */
+    background: var(--card-bg);
+    border: 1px solid var(--glass);
+    border-radius: 5px;
+    /* Sharper corners for pro look */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    color: #fff;
+    transform-origin: top center;
+    /* DELAYED FALLING: Starts after 2.5s */
+    animation: dropIn 1.5s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
+    transform: translateY(-150vh);
+    /* Start far above */
+    backdrop-filter: blur(5px);
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+/* Staggered delays starting from 2.5s */
+.hanging-card:nth-child(1) {
+    animation-delay: 2.5s;
+}
+
+.hanging-card:nth-child(2) {
+    animation-delay: 2.7s;
+}
+
+.hanging-card:nth-child(3) {
+    animation-delay: 2.9s;
+}
+
+.hanging-card:nth-child(4) {
+    animation-delay: 3.1s;
+}
+
+.hanging-card:hover {
+    box-shadow: 0 0 15px var(--neon-blue);
+    border-color: var(--neon-blue);
+    transform: translateY(5px);
+    /* Gentle interaction */
+}
+
+.card-body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+    font-family: var(--font-hack);
+    /* Mono for nav items */
+    font-size: 0.9rem;
+}
+
+.card-body i {
+    font-size: 1.8rem;
+    color: var(--neon-blue);
+}
+
+/* The Thread */
+.thread {
+    position: absolute;
+    top: -150vh;
+    left: 50%;
+    width: 1px;
+    height: 150vh;
+    background: linear-gradient(to bottom, transparent, var(--glass));
+    opacity: 0.5;
+}
+
+@keyframes dropIn {
+    0% {
+        transform: translateY(-150vh);
+    }
+
+    100% {
+        transform: translateY(0);
+    }
+}
+
+/* --- Content Pages --- */
+.content-wrapper {
+    padding: 80px 20px;
+    max-width: 1000px;
+    /* More contained for professional read */
+    margin: 0 auto;
+}
+
+.top-nav {
+    position: fixed;
+    top: 30px;
+    left: 30px;
+    z-index: 100;
+}
+
+.back-link {
+    color: #fff;
+    font-family: var(--font-hack);
+    text-decoration: none;
+    font-size: 1rem;
+    padding: 8px 16px;
+    border: 1px solid var(--glass);
+    background: rgba(0, 0, 0, 0.6);
+    transition: all 0.2s;
+}
+
+.back-link:hover {
+    border-color: var(--neon-blue);
+    color: var(--neon-blue);
+}
+
+.page-container {
+    animation: fadeIn 0.5s ease-out;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+/* Projects Grid - Professional Layout */
+.projects-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 20px;
+}
+
+.project-card {
+    background: rgba(20, 20, 30, 0.6);
+    padding: 20px;
+    border: 1px solid var(--glass);
+    transition: all 0.2s;
+    cursor: pointer;
+    height: 100%;
+}
+
+.project-card:hover {
+    border-color: var(--neon-blue);
+    transform: translateY(-2px);
+    background: rgba(20, 20, 30, 0.9);
+}
+
+.project-card h3 {
+    font-size: 1.1rem;
+    color: var(--neon-blue);
+    margin-bottom: 8px;
+    font-family: var(--font-hack);
+}
+
+.project-card p {
+    font-size: 0.9rem;
+    color: #ccc;
+    margin-bottom: 12px;
+}
+
+.repo-stats {
+    font-family: var(--font-hack);
+    font-size: 0.8rem;
+    color: #888;
+    display: flex;
+    gap: 15px;
+}
+
+/* Responsiveness */
+@media (max-width: 768px) {
+    .hanging-cards-container {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 20px;
+    }
+
+    .welcome-text {
+        font-size: 1.8rem;
+        white-space: normal;
+        border: none;
+        animation: fadeIn 1s forwards;
+    }
+}

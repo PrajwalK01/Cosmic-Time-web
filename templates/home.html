@@ -1,0 +1,48 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="home-container">
+    <!-- Hacking Style Typewriter Text -->
+    <div class="welcome-wrapper">
+        <h1 class="welcome-text hacking-font">Welcome to My Page_</h1>
+    </div>
+
+    <div class="hanging-cards-container">
+        <!-- Card 1: About -->
+        <a href="{{ url_for('about') }}" class="hanging-card">
+            <div class="thread"></div>
+            <div class="card-body">
+                <i class="fas fa-user-astronaut"></i>
+                <span>ABOUT</span>
+            </div>
+        </a>
+
+        <!-- Card 2: Projects -->
+        <a href="{{ url_for('projects') }}" class="hanging-card">
+            <div class="thread"></div>
+            <div class="card-body">
+                <i class="fas fa-code-branch"></i>
+                <span>PROJECTS</span>
+            </div>
+        </a>
+
+        <!-- Card 3: Skills -->
+        <a href="{{ url_for('skills') }}" class="hanging-card">
+            <div class="thread"></div>
+            <div class="card-body">
+                <i class="fas fa-bolt"></i>
+                <span>SKILLS</span>
+            </div>
+        </a>
+
+        <!-- Card 4: Contact -->
+        <a href="{{ url_for('contact') }}" class="hanging-card">
+            <div class="thread"></div>
+            <div class="card-body">
+                <i class="fas fa-envelope"></i>
+                <span>CONTACT</span>
+            </div>
+        </a>
+    </div>
+</div>
+{% endblock %}
