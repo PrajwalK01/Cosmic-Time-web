@@ -2,6 +2,8 @@
 
 An educational web application that explores the nature of Time through the lenses of ancient mythology, philosophy, and modern physics. This project visualizes complex concepts like relativity and entropy through interactive graphs and timelines.
 
+https://cosmic-time-web.vercel.app/(Make sure to visit it)
+
 ## Features
 
 -   **Multi-Disciplinary Approach**: Connects mythological intuition (e.g., Hindu Cosmology, Mayan Calendars) with mathematical refinement (General Relativity).
